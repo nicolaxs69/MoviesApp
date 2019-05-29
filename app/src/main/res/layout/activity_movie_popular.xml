@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/colorViewBg"
+    tools:context=".ui.movie_popular.MoviePopularActivity">
+
+    <android.support.v7.widget.RecyclerView
+        android:id="@+id/rv_movie_list"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:clipToPadding="false"
+        android:scrollbars="vertical" />
+
+    <ProgressBar
+        android:id="@+id/pb_loading"
+        style="@style/Base.Widget.AppCompat.ProgressBar"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerInParent="true"
+        app:layout_constraintBottom_toTopOf="@+id/rv_movie_list"
+        app:layout_constraintEnd_toStartOf="@+id/rv_movie_list"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toEndOf="@+id/rv_movie_list"
+        app:layout_constraintTop_toBottomOf="@+id/rv_movie_list" />
+
+    <TextView
+        android:id="@+id/tv_empty_view"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_centerInParent="true"
+        android:drawableTop="@drawable/ic_empty_movies"
+        android:drawablePadding="10dp"
+        android:gravity="center_horizontal"
+        android:text="@string/no_movies"
+        android:textSize="@dimen/no_result_text_size"
+        android:visibility="gone" />
+
+    <android.support.design.widget.BottomNavigationView
+        android:id="@+id/navigation"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="0dp"
+        android:layout_marginEnd="0dp"
+        android:background="?android:attr/windowBackground"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:menu="@menu/navigation" />
+
+
+</android.support.constraint.ConstraintLayout>
