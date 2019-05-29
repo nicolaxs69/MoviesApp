@@ -26,10 +26,10 @@ public class MovieDetailsModel implements IMovieDetailsView.Model {
     @Override
     public void getMovieDetails(final OnFinishedListener onFinishedListener, int movieId) {
 
-        MovieApi apiService =
-                ApiConnection.getClient().create(MovieApi.class);
+        MovieApi apiService = ApiConnection.getClient().create(MovieApi.class);
 
         Call<Movie> call = apiService.getMovieDetails(movieId, API_KEY, CREDITS);
+        
         call.enqueue(new Callback<Movie>() {
             @Override
             public void onResponse(Call<Movie> call, Response<Movie> response) {

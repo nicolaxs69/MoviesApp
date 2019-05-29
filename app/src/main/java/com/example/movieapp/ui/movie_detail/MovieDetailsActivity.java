@@ -53,7 +53,6 @@ public class MovieDetailsActivity extends AppCompatActivity implements IMovieDet
     private TextView tvHomepageValue;
     private TextView tvTaglineValue;
     private TextView tvRuntimeValue;
-
     private String movieName;
 
     private MovieDetailsPresenter movieDetailsPresenter;
