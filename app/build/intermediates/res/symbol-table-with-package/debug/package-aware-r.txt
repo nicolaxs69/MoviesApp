@@ -256,7 +256,9 @@ attr fontStyle
 attr fontVariationSettings
 attr fontWeight
 attr foregroundInsidePadding
+attr freezesAnimation
 attr gapBetweenBars
+attr gifSource
 attr goIcon
 attr headerLayout
 attr height
@@ -286,6 +288,7 @@ attr indeterminateProgressStyle
 attr initialActivityCount
 attr insetForeground
 attr isLightTheme
+attr isOpaque
 attr itemBackground
 attr itemHorizontalPadding
 attr itemHorizontalTranslationEnabled
@@ -379,6 +382,7 @@ attr listPreferredItemPaddingLeft
 attr listPreferredItemPaddingRight
 attr logo
 attr logoDescription
+attr loopCount
 attr materialButtonStyle
 attr materialCardViewStyle
 attr maxActionInlineWidth
@@ -1015,12 +1019,15 @@ drawable avd_hide_password
 drawable avd_show_password
 drawable big_star
 drawable calendar_clock
+drawable curved_shape
+drawable curved_shape2
 drawable design_bottom_navigation_item_background
 drawable design_fab_background
 drawable design_ic_visibility
 drawable design_ic_visibility_off
 drawable design_password_eye
 drawable design_snackbar_background
+drawable gif1
 drawable ic_account_group
 drawable ic_crown
 drawable ic_dashboard_black_24dp
@@ -1139,6 +1146,7 @@ id filled
 id fixed
 id forever
 id ghost_view
+id gifImageView
 id gone
 id group_divider
 id groups
@@ -1155,6 +1163,7 @@ id item_touch_helper_previous_elevation
 id iv_backdrop
 id iv_movie_thumb
 id iv_profile_pic
+id konfettiView
 id labeled
 id largeLabel
 id left
@@ -1173,6 +1182,7 @@ id mtrl_internal_children_alpha_tag
 id multiply
 id navigation
 id navigation_header_container
+id negativeBtn
 id never
 id none
 id normal
@@ -1193,9 +1203,11 @@ id pb_loading
 id percent
 id pin
 id popular_movies
+id positiveBtn
 id progress_circular
 id progress_horizontal
 id radio
+id relativelayout1
 id right
 id right_icon
 id right_side
@@ -1352,9 +1364,8 @@ layout abc_search_dropdown_item_icons_2line
 layout abc_search_view
 layout abc_select_dialog_material
 layout abc_tooltip
+layout activity_movie
 layout activity_movie_details
-layout activity_movie_popular
-layout activity_movie_top
 layout cast_card
 layout content_movie_details
 layout design_bottom_navigation_item
@@ -1371,6 +1382,7 @@ layout design_navigation_item_subheader
 layout design_navigation_menu
 layout design_navigation_menu_item
 layout design_text_input_password_icon
+layout fancygifdialog
 layout movie_card_view
 layout mtrl_layout_snackbar
 layout mtrl_layout_snackbar_include
@@ -2010,6 +2022,8 @@ styleable FlowLayout itemSpacing lineSpacing
 styleable FontFamily fontProviderAuthority fontProviderCerts fontProviderFetchStrategy fontProviderFetchTimeout fontProviderPackage fontProviderQuery
 styleable FontFamilyFont android_font android_fontWeight android_fontStyle android_ttcIndex android_fontVariationSettings font fontStyle fontVariationSettings fontWeight ttcIndex
 styleable ForegroundLinearLayout android_foreground android_foregroundGravity foregroundInsidePadding
+styleable GifTextureView gifSource isOpaque
+styleable GifView freezesAnimation loopCount
 styleable GradientColor android_startColor android_endColor android_type android_centerX android_centerY android_gradientRadius android_tileMode android_centerColor android_startX android_startY android_endX android_endY
 styleable GradientColorItem android_color android_offset
 styleable LinearConstraintLayout android_orientation

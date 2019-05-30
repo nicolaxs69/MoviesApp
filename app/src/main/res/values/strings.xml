@@ -10,7 +10,6 @@
     <string name="title_dashboard">Top Rated</string>
     <string name="title_notifications">Upcoming</string>
 
-
     <string name="action_search">Search</string>
     <string name="communication_error">Error in getting data. Please try again later.</string>
     <string name="popular_movies">Most Popular Movies</string>

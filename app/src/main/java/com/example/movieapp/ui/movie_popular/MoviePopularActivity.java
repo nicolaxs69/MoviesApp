@@ -7,10 +7,10 @@
 
 package com.example.movieapp.ui.movie_popular;
 
-import android.content.Context;
+import android.annotation.SuppressLint;
 import android.content.Intent;
+import android.graphics.Color;
 import android.support.design.widget.BottomNavigationView;
-import android.support.design.widget.FloatingActionButton;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.support.v7.widget.DefaultItemAnimator;
@@ -36,7 +36,13 @@ import com.example.movieapp.model.Movie;
 import com.example.movieapp.ui.movie_top.MovieTopActivity;
 import com.example.movieapp.ui.movie_upcoming.MovieUpcomingActivity;
 import com.example.movieapp.utils.GridItemDecorator;
+import com.shashank.sony.fancygifdialoglib.FancyGifDialog;
+import com.shashank.sony.fancygifdialoglib.FancyGifDialogListener;
 
+
+import nl.dionsegijn.konfetti.models.Shape;
+import nl.dionsegijn.konfetti.KonfettiView;
+import nl.dionsegijn.konfetti.models.Size;
 
 import static com.example.movieapp.utils.Constants.KEY_MOVIE_ID;
 import static com.example.movieapp.utils.GridItemDecorator.dpToPx;
@@ -55,6 +61,7 @@ public class MoviePopularActivity extends AppCompatActivity implements IMoviePop
     private int thresholdLimit = 8;
     private int previousTotal = 0;
     int firstVisibleItem, visibleItemCount, totalItemCount;
+    private KonfettiView konfettiView;
 
     private RecyclerView rvMovieList;
     private GridLayoutManager gridLayoutManager;
@@ -64,7 +71,7 @@ public class MoviePopularActivity extends AppCompatActivity implements IMoviePop
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_movie_popular);
+        setContentView(R.layout.activity_movie);
         getSupportActionBar().setTitle(getString(R.string.popular_movies));
 
         initUI();
@@ -77,6 +84,7 @@ public class MoviePopularActivity extends AppCompatActivity implements IMoviePop
         //Initializing presenter
         moviePopularPresenter = new MoviePopularPresenter(this);
         moviePopularPresenter.requestDataFromServer();
+
     }
 
     /**
@@ -96,6 +104,7 @@ public class MoviePopularActivity extends AppCompatActivity implements IMoviePop
 
         pgLoading = findViewById(R.id.pb_loading);
         tvEmptyView = findViewById(R.id.tv_empty_view);
+        konfettiView = findViewById(R.id.konfettiView);
     }
 
     @Override
@@ -201,7 +210,7 @@ public class MoviePopularActivity extends AppCompatActivity implements IMoviePop
         moviesList.addAll(movieArrayList);
         moviesPopularAdapter.notifyDataSetChanged();
 
-        // This will help us to fetch data from next page no.
+        
         pageNo++;
     }
 
@@ -210,7 +219,34 @@ public class MoviePopularActivity extends AppCompatActivity implements IMoviePop
     public void onResponseFailure(Throwable throwable) {
 
         Log.e(TAG, throwable.getMessage());
-        Toast.makeText(this, getString(R.string.communication_error), Toast.LENGTH_LONG).show();
+        //Toast.makeText(this, getString(R.string.communication_error), Toast.LENGTH_LONG).show();
+
+        new FancyGifDialog.Builder(this)
+                .setTitle("¡Oops, offline content unavaiable!")
+                .setMessage("We don't have this function by now, but i am learning every day to bring functionalities. Like this cool animation for example.")
+                .setPositiveBtnText("Ok")
+                .setPositiveBtnBackground("#203d4c")
+                .setGifResource(R.drawable.gif1)   //Pass your Gif here
+                .isCancellable(true)
+                .OnPositiveClicked(new FancyGifDialogListener() {
+                    @SuppressLint("NewApi")
+                    @Override
+                    public void OnClick() {
+                        Toast.makeText(MoviePopularActivity.this,"Thanks!",Toast.LENGTH_SHORT).show();
+
+                        konfettiView.build()
+                                .addColors(Color.YELLOW, Color.GREEN, Color.MAGENTA)
+                                .setDirection(0.0, 359.0)
+                                .setSpeed(1f, 5f)
+                                .setFadeOutEnabled(true)
+                                .setTimeToLive(2000L)
+                                .addShapes(Shape.RECT, Shape.CIRCLE)
+                                .addSizes(new Size(12, 5))
+                                .setPosition(-50f, konfettiView.getWidth() + 50f, -50f, -50f)
+                                .streamFor(300, 5000L);
+                    }
+                })
+                .build();
     }
 
     @Override

@@ -45,7 +45,7 @@ public class CastAdapter extends RecyclerView.Adapter<CastAdapter.MyViewHolder> 
     @Override
     public MyViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
         View itemView = LayoutInflater.from(parent.getContext())
-                .inflate(R.layout.cast_card, parent, false);
+                .inflate(R.layout.casting_card, parent, false);
 
         return new MyViewHolder(itemView);
     }
