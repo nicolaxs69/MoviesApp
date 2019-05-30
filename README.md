@@ -1,6 +1,6 @@
 # MoviesApp
 
-![.](https://s3.amazonaws.com/imagestuffs/popcorn+.png)
+![.](https://s3.amazonaws.com/imagestuffs/popcorn.png)
 
 This is a movies app, where you can search the latest movies from hollywood. User can filter by category and see detail for every movie.
 
