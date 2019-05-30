@@ -1,15 +1,17 @@
 <resources>
 
+    // Key Strings with context
     <string name="app_name">RappiMovies</string>
     <string name="BASE_URL">http://api.themoviedb.org/3/</string>
     <string name="API_KEY">b270bdb30c87b2fb2b5496ca5ea0e328</string>
     <string name="IMAGE_BASE_URL">https://image.tmdb.org/t/p/w200/</string>
     <string name="BACKDROP_BASE_URL">https://image.tmdb.org/t/p/w780/</string>
+
+    // App Strings
     <string name="title_activity_main">MainActivity</string>
     <string name="title_home">Popular</string>
     <string name="title_dashboard">Top Rated</string>
     <string name="title_notifications">Upcoming</string>
-
     <string name="action_search">Search</string>
     <string name="communication_error">Error in getting data. Please try again later.</string>
     <string name="popular_movies">Most Popular Movies</string>
@@ -31,4 +33,9 @@
     <string name="no_movies">Oops! No result found.</string>
     <string name="error_data">Something went wrong! Please try again later.</string>
     <string name="done">Done</string>
+
+    // Gif Strings
+    <string name="gif_title">¡Oops, offline content is unavaiable!</string>
+    <string name="gif_text">We don\'t have this function rigth now, but i am learning every day to bring functionalities. Like this cool animation for example.</string>
+
 </resources>

@@ -1,4 +1,4 @@
-#Thu May 30 08:19:41 PET 2019
+#Thu May 30 10:31:14 PET 2019
 base.0=/home/nicolas/Desktop/MoviesApp/app/build/intermediates/dex/debug/mergeDexDebug/out
 path.0=classes.dex
 renamed.0=classes.dex

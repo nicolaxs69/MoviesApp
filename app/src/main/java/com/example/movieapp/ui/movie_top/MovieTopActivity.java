@@ -223,8 +223,8 @@ public class MovieTopActivity extends AppCompatActivity implements IMovieTopView
         //Toast.makeText(this, getString(R.string.communication_error), Toast.LENGTH_LONG).show();
 
         new FancyGifDialog.Builder(this)
-                .setTitle("¡Oops, offline content unavaiable!")
-                .setMessage("We don't have this function by now, but i am learning every day to bring functionalities. Like this cool animation for example.")
+                .setTitle(getString(R.string.gif_title))
+                .setMessage(getString(R.string.gif_text))
                 .setPositiveBtnText("Ok")
                 .setPositiveBtnBackground("#203d4c")
                 .setGifResource(R.drawable.gif1)   //Pass your Gif here

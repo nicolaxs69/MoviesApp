@@ -612,23 +612,23 @@ public final class R {
         public static final int abc_textfield_search_default_mtrl_alpha = 0x7f080057;
         public static final int abc_textfield_search_material = 0x7f080058;
         public static final int abc_vector_test = 0x7f080059;
-        public static final int curved_shape = 0x7f08005e;
-        public static final int curved_shape2 = 0x7f08005f;
-        public static final int gif1 = 0x7f080066;
-        public static final int notification_action_background = 0x7f080079;
-        public static final int notification_bg = 0x7f08007a;
-        public static final int notification_bg_low = 0x7f08007b;
-        public static final int notification_bg_low_normal = 0x7f08007c;
-        public static final int notification_bg_low_pressed = 0x7f08007d;
-        public static final int notification_bg_normal = 0x7f08007e;
-        public static final int notification_bg_normal_pressed = 0x7f08007f;
-        public static final int notification_icon_background = 0x7f080080;
-        public static final int notification_template_icon_bg = 0x7f080081;
-        public static final int notification_template_icon_low_bg = 0x7f080082;
-        public static final int notification_tile_bg = 0x7f080083;
-        public static final int notify_panel_notification_icon_bg = 0x7f080084;
-        public static final int tooltip_frame_dark = 0x7f080087;
-        public static final int tooltip_frame_light = 0x7f080088;
+        public static final int curved_shape = 0x7f08005d;
+        public static final int curved_shape2 = 0x7f08005e;
+        public static final int gif1 = 0x7f080065;
+        public static final int notification_action_background = 0x7f080076;
+        public static final int notification_bg = 0x7f080077;
+        public static final int notification_bg_low = 0x7f080078;
+        public static final int notification_bg_low_normal = 0x7f080079;
+        public static final int notification_bg_low_pressed = 0x7f08007a;
+        public static final int notification_bg_normal = 0x7f08007b;
+        public static final int notification_bg_normal_pressed = 0x7f08007c;
+        public static final int notification_icon_background = 0x7f08007d;
+        public static final int notification_template_icon_bg = 0x7f08007e;
+        public static final int notification_template_icon_low_bg = 0x7f08007f;
+        public static final int notification_tile_bg = 0x7f080080;
+        public static final int notify_panel_notification_icon_bg = 0x7f080081;
+        public static final int tooltip_frame_dark = 0x7f080083;
+        public static final int tooltip_frame_light = 0x7f080084;
     }
     public static final class id {
         private id() {}
@@ -823,8 +823,8 @@ public final class R {
         public static final int abc_shareactionprovider_share_with_application = 0x7f10002a;
         public static final int abc_toolbar_collapse_description = 0x7f10002b;
         public static final int app_name = 0x7f10002d;
-        public static final int search_menu_title = 0x7f100049;
-        public static final int status_bar_notification_info_overflow = 0x7f10004a;
+        public static final int search_menu_title = 0x7f10004b;
+        public static final int status_bar_notification_info_overflow = 0x7f10004c;
     }
     public static final class style {
         private style() {}
