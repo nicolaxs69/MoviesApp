@@ -1,0 +1,7 @@
+
+U"squid:SwitchLastCaseIsDefaultChecki""Add a default case to this switch.(øå´¡ÿÿÿÿÿ
+Esquid:S16598".Declare "visibleItemCount" on a separate line.(âúÉ
+Csquid:S16598",Declare "totalItemCount" on a separate line.(âúÉ
+Lsquid:S1066"/Merge this if statement with the enclosing one.(ÂÌ²ùÿÿÿÿ
+Hsquid:S1068-",Remove this unused "mContext" private field.(»úÅ¾øÿÿÿÿ
+Isquid:S10682"-Remove this unused "fabFilter" private field.(Â¦öşÿÿÿÿ

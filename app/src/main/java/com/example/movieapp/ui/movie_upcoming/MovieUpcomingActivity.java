@@ -15,7 +15,10 @@ import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.DefaultItemAnimator;
 import android.support.v7.widget.GridLayoutManager;
 import android.support.v7.widget.RecyclerView;
+import android.support.v7.widget.SearchView;
 import android.util.Log;
+import android.view.Menu;
+import android.view.MenuInflater;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.ProgressBar;
@@ -44,7 +47,6 @@ public class MovieUpcomingActivity extends AppCompatActivity implements IMovieUp
     private MovieUpcomingPresenter MovieUpcomingPresenter;
     private MoviesUpcomingAdapter moviesUpcomingAdapter;
 
-    private FloatingActionButton fabFilter;
     private TextView tvEmptyView;
 
     private int pageNo = 1;
@@ -92,6 +94,31 @@ public class MovieUpcomingActivity extends AppCompatActivity implements IMovieUp
 
         pgLoading = findViewById(R.id.pb_loading);
         tvEmptyView = findViewById(R.id.tv_empty_view);
+    }
+
+    @Override
+    public boolean onCreateOptionsMenu(Menu menu) {
+        MenuInflater inflater = getMenuInflater();
+        inflater.inflate(R.menu.main_menu, menu);
+
+        MenuItem searchItem = menu.findItem(R.id.action_search);
+        SearchView searchView = (SearchView) searchItem.getActionView();
+        searchView.setOnQueryTextListener(new SearchView.OnQueryTextListener() {
+            @Override
+            public boolean onQueryTextSubmit(String query) {
+                return false;
+            }
+
+            @Override
+            public boolean onQueryTextChange(String newText) {
+
+                moviesUpcomingAdapter.setFilterParameter(newText);
+                moviesUpcomingAdapter.getFilter().filter("");
+
+                return false;
+            }
+        });
+        return true;
     }
 
     private BottomNavigationView.OnNavigationItemSelectedListener mOnNavigationItemSelectedListener

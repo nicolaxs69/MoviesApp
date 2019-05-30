@@ -15,6 +15,8 @@ import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Filter;
+import android.widget.Filterable;
 import android.widget.ImageView;
 import android.widget.ProgressBar;
 import android.widget.TextView;
@@ -26,6 +28,7 @@ import com.bumptech.glide.request.RequestListener;
 import com.bumptech.glide.request.RequestOptions;
 import com.bumptech.glide.request.target.Target;
 
+import java.util.ArrayList;
 import java.util.List;
 
 import com.example.movieapp.R;
@@ -33,14 +36,18 @@ import com.example.movieapp.model.Movie;
 import com.example.movieapp.ui.movie_popular.MoviePopularActivity;
 import com.example.movieapp.utils.network.ApiConnection;
 
-public class MoviesPopularAdapter extends RecyclerView.Adapter<MoviesPopularAdapter.CustomViewHolder> {
+public class MoviesPopularAdapter extends RecyclerView.Adapter<MoviesPopularAdapter.CustomViewHolder> implements Filterable {
 
     private MoviePopularActivity moviePopularActivity;
     private List<Movie> moviesList;
+    private List<Movie> originalMovieList;
+
+    private String title;
 
     public MoviesPopularAdapter(MoviePopularActivity moviePopularActivity, List<Movie> moviesList) {
         this.moviePopularActivity = moviePopularActivity;
         this.moviesList = moviesList;
+        this.originalMovieList = moviesList;
     }
 
     @NonNull
@@ -98,6 +105,74 @@ public class MoviesPopularAdapter extends RecyclerView.Adapter<MoviesPopularAdap
         return moviesList.size();
     }
 
+    /**
+     * This function will set parameters for Filter
+     * @param title -By title.
+     */
+
+    public void setFilterParameter(String title) {
+        this.title = title;
+    }
+
+    @Override
+    public Filter getFilter() {
+        return new Filter() {
+            @Override
+            protected FilterResults performFiltering(CharSequence charSequence) {
+
+                List<Movie> filteredResults = null;
+                if (title.isEmpty()) {
+                    filteredResults = originalMovieList;
+                } else {
+                    filteredResults = getFilteredResults(title);
+                }
+
+                FilterResults results = new FilterResults();
+                results.values = filteredResults;
+
+                return results;
+            }
+
+            @Override
+            protected void publishResults(CharSequence charSequence, FilterResults filterResults) {
+                moviesList = (List<Movie>) filterResults.values;
+                MoviesPopularAdapter.this.notifyDataSetChanged();
+
+                if (getItemCount() == 0) {
+                    moviePopularActivity.showEmptyView();
+                } else {
+                    moviePopularActivity.hideEmptyView();
+                }
+            }
+        };
+    }
+
+    /**
+     * This function will filter the data by using from and to date.
+     * @param title - To release date.
+     * @return List of movies which satisfies the criteria
+     */
+
+    protected List<Movie> getFilteredResults(String title) {
+
+        List<Movie> results = new ArrayList<>();
+
+        String filterPattern = title.toLowerCase().trim();
+
+        for (Movie movie : originalMovieList) {
+
+            if (movie.getTitle().isEmpty()) {
+                continue;
+            }
+
+            if (movie.getTitle().toLowerCase().contains(filterPattern)) {
+                results.add(movie);
+            }
+        }
+        return results;
+    }
+
+
     public class CustomViewHolder extends RecyclerView.ViewHolder {
 
         public TextView tvTitle;
@@ -116,4 +191,6 @@ public class MoviesPopularAdapter extends RecyclerView.Adapter<MoviesPopularAdap
             pgLoadImage = itemView.findViewById(R.id.pb_load_image);
         }
     }
+
+
 }
