@@ -1,0 +1,8 @@
+
+?squid:S1148c"#Use a logger to log this exception.(€ÉÔ…ıÿÿÿÿ
+‰"squid:ClassVariableVisibilityCheck±"UMake tvRatings a static final constant or non-public and provide accessors if needed.(•ŞÈÊÿÿÿÿÿ
+†"squid:ClassVariableVisibilityCheck´"WMake pgLoadImage a static final constant or non-public and provide accessors if needed.(£ğã“
+ƒsquid:UselessImportCheck"_Remove this unused import 'com.example.movieapp.ui.movie_popular.adapter.MoviesPopularAdapter'.(‘ÚŸÔ
+‡"squid:ClassVariableVisibilityCheck°"SMake tvTitle a static final constant or non-public and provide accessors if needed.(·ÍÑıÿÿÿÿ
+‰"squid:ClassVariableVisibilityCheck²"UMake tvRelease a static final constant or non-public and provide accessors if needed.(–¼Ãøÿÿÿÿ
+‡"squid:ClassVariableVisibilityCheck³"SMake ivThumb a static final constant or non-public and provide accessors if needed.(ÚÇíÿÿÿÿÿ

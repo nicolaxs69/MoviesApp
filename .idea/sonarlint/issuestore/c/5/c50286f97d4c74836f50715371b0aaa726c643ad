@@ -1,0 +1,9 @@
+
+†"squid:ClassVariableVisibilityCheck¶"WMake pgLoadImage a static final constant or non-public and provide accessors if needed.(£ğã“
+‡"squid:ClassVariableVisibilityCheckµ"SMake ivThumb a static final constant or non-public and provide accessors if needed.(ÚÇíÿÿÿÿÿ
+Xsquid:UselessImportCheck
+"4Remove this unused import 'android.content.Context'.(©Ê‰è
+‰"squid:ClassVariableVisibilityCheck´"UMake tvRelease a static final constant or non-public and provide accessors if needed.(–¼Ãøÿÿÿÿ
+?squid:S1148c"#Use a logger to log this exception.(€ÉÔ…ıÿÿÿÿ
+‡"squid:ClassVariableVisibilityCheck²"SMake tvTitle a static final constant or non-public and provide accessors if needed.(·ÍÑıÿÿÿÿ
+‰"squid:ClassVariableVisibilityCheck³"UMake tvRatings a static final constant or non-public and provide accessors if needed.(•ŞÈÊÿÿÿÿÿ
